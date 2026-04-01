@@ -4,6 +4,7 @@ let displayNote = document.getElementById("display-note");
 
 let notesArray = [];
 
+
 function getNotesArrayFromLS() {
     let arrayFromLS = JSON.parse(localStorage.getItem('notesArray')) || [] ;
 
@@ -22,19 +23,19 @@ function getNotesArrayFromLS() {
     notesArray = arrayFromLS;
     displayNotes();
 }
-getNotesArrayFromLS();
+// getNotesArrayFromLS();
 
 function saveNotesArrayToLS() {
     localStorage.setItem("notesArray", JSON.stringify(notesArray));
 }
-saveNotesArrayToLS();
+// saveNotesArrayToLS();
 
 function displayNotes() {
     displayNote.innerHTML = "";
 
     notesArray.forEach((note) => {
         displayNote.innerHTML += `
-               <div class="col" mt >
+               <div class="col" data-id = '${note.id}'>
                  <div class="border rounded-5  h-100 p-3 custom-div">
                     <p>Created : ${note.date}</p>
                     <p>${note.note}</p>
@@ -43,16 +44,18 @@ function displayNotes() {
                
                 <div class="row">
                     <div class="col m-3 custom-btn">
-                        <button id="edit" class="btn btn-primary ">EDIT-NOTE</button>
-                        <button id="edit" class="btn btn-danger ">DELETE-NOTE</button>
-                    </div>                     
+                        <button  class="btn btn-primary edit-btn"   data-id=${note.id}>EDIT-NOTE</button>
+                        <button  class="btn btn-danger delete-btn"  data-id=${note.id}>DELETE-NOTE</button>
+                    </div>  
+                    <hr>                   
         `;
-    });
-  
+    });  
 }
 getNotesArrayFromLS()
 
 addNoteBtn.addEventListener("click", () => {
+    if (idOfNoteToEdit !== null) return; // TO CHANGE THE STATE
+    
     let textValue = noteText.value.trim();
 
     if (textValue === "") {
@@ -74,4 +77,5 @@ addNoteBtn.addEventListener("click", () => {
     noteText.value = "";
     noteText.focus();
 });
+
 // localStorage.removeItem('notesArray')
