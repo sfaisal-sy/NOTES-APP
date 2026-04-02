@@ -40,6 +40,7 @@ addNoteBtn.addEventListener('click', () => {
     // DISPLAY ON SCREEN
     displayNotes();
 
+    // CHANGE THE BTN UI
     idOfNoteToEdit = null;
     addNoteBtn.textContent = 'ADD - NOTE';
     addNoteBtn.classList.replace('btn-success', 'btn-primary');
