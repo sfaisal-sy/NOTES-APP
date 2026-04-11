@@ -4,57 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOTES - APP</title>
+    <title>QUIZ-APP</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <script src="editnote.js" defer></script>
-    <script src="deleteNote.js" defer></script>
+    <!-- <script src="script.js" defer></script> -->
+    <script src="register.js" defer></script>
 </head>
 
 <body>
+
     <header>
-        <div class="container m-3 mx-auto">
+        <div class="container">
             <div class="row">
-                <div class="col m-3 mx-auto ">
-                    <h1 class="text-center border p-3 rounded-3">NOTES - APP</h1>
+                <div class="col border m-3 mx-auto">
+                    <h1 class="text-center">QUIZ - APP</h1>
                 </div>
             </div>
             <hr>
         </div>
     </header>
     <main>
-        <div class="container">
+        <div class="container border mb-5">
+            <div class="row">
+                <div class="col p-4">
+                    <div class="heading">
+                        <h1>Create Account</h1>
+                        <p>Join QuizMaster Pro and test your Knowledge!</p>
+                    </div>                   
+                    <hr>
+                </div>
+            </div>
+            <form id="reg-form">
+                 <div class="row">
+                    <div class="col-6">
+                        <input type="text" id="fname" placeholder="First Name" class="w-100 p-2">
+                    </div>
+                    <div class="col-6">
+                        <input type="text" id="lname" name="lname" placeholder="Last Name" class="w-100 mb-2 p-2">
+                    </div>
+                    <div class="col-12">
+                        <input type="email" id="email" name="email" placeholder="Email" class="w-100 mb-2 p-2">
+                    </div>
+                    <div class="col-12">
+                        <input type="password" id="password" name="email" placeholder="Passward" class="w-100 mb-2 p-2">
+                    </div>
+                    <hr>
+                    <button type="submit" id="register-btn" class="btn btn-primary m-3 mx-auto w-50">CREATE - ACCOUNT</button>
+                </div>
+            </div>
+        </form>
+        <!-- /////////////////////////////////////////////////////////////////////////////////// -->
+        <div class="container border text-center">
             <div class="row">
                 <div class="col">
-                    <div class="form-floating ">
-                        <textarea class="form-control bg-dark text-white" placeholder="" id="note-text"
-                            style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">WRITE A NOTE</label>
-                    </div>
+                    <h2>ALREADY HAVE ACCOUNT</h2>
+                    <h3>SING IN</h3>
                 </div>
+                <hr>
             </div>
-            <div class="row mt-3">
-                <div class="col">
-                    <button class="btn btn-primary w-100" id="note-btn">Add-Note</button>
+            <form>
+            <div class="row">
+                <div class="col-6">
+                    <input type="email" id="user-email" name="user-email" placeholder="Enter Email" class=" w-100 mb-2 p-2" >
                 </div>
+                <div class="col-6">
+                    <input type="password" id="user-password" name="user-password" placeholder="Enter Password" class="w-100 mb-2 p-2">
+                </div>
+                 <button id="login-btn" class="btn btn-primary m-3 mx-auto w-50">SIGN - IN</button>
             </div>
-            <hr>
         </div>
-        <section>
-            <div class="container">
-                <div class="row" id="display-note">
-                    <!-- NOTE RENDER HERE THROUGH JS -->
-
-                    
-                </div>
-            </div>
-        </section>
+        </form>
     </main>
 
-
-
-    <script src="bootstrap.min.js"></script>
+    
+    <!-- <script src="bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.21/dist/sweetalert2.all.min.js"></script>
 </body>
-
 </html>
